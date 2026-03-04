@@ -4,11 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/logo.png">
-  <title>Service Area | Desert Sage Rentals</title>
-  <meta name="description" content="Desert Sage Rentals serves Central Oregon, Columbia River Gorge, Oregon Coast, Willamette Valley, Cascade Mountains, Eastern Oregon, and Southern Oregon. Boutique vacation rental management.">
+  <title>Vacation Rental Management Prineville, Bend &amp; All Oregon</title>
+  <meta name="description" content="Vacation rental management in Prineville, Bend, Redmond, Sisters, Sunriver, Hood River, and across Oregon. Desert Sage Rentals serves Central Oregon, the Gorge, Coast, and more.">
   <link rel="canonical" href="https://desertsagerentals.com/service-area.html">
-  <meta property="og:title" content="Service Areas | Desert Sage Rentals">
-  <meta property="og:description" content="Boutique vacation rental management across Oregon — Central Oregon, Columbia River Gorge, Oregon Coast, and more.">
+  <meta property="og:title" content="Vacation Rental Management Across Oregon | Desert Sage Rentals">
+  <meta property="og:description" content="Vacation rental management in Prineville, Bend, and across Oregon. Central Oregon, Gorge, Coast, and more.">
+  <meta property="og:site_name" content="Desert Sage Rentals">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Oregon Vacation Rental Management",
+    "description": "Full-service vacation rental and Airbnb management across Oregon, including Central Oregon, Columbia River Gorge, Oregon Coast, Willamette Valley, Cascade Mountains, and Southern Oregon.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Desert Sage Rentals",
+      "telephone": "+1-541-362-1879"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Prineville, OR" },
+      { "@type": "City", "name": "Bend, OR" },
+      { "@type": "City", "name": "Redmond, OR" },
+      { "@type": "City", "name": "Sisters, OR" },
+      { "@type": "City", "name": "Sunriver, OR" },
+      { "@type": "City", "name": "La Pine, OR" },
+      { "@type": "City", "name": "Madras, OR" },
+      { "@type": "City", "name": "Hood River, OR" },
+      { "@type": "City", "name": "The Dalles, OR" },
+      { "@type": "City", "name": "Cannon Beach, OR" },
+      { "@type": "City", "name": "Newport, OR" },
+      { "@type": "City", "name": "Government Camp, OR" },
+      { "@type": "City", "name": "McMinnville, OR" },
+      { "@type": "City", "name": "Ashland, OR" },
+      { "@type": "City", "name": "Baker City, OR" },
+      { "@type": "State", "name": "Oregon" }
+    ],
+    "serviceType": ["Vacation Rental Management", "Airbnb Management", "Short-Term Rental Consulting"]
+  }
+  </script>
   <meta property="og:image" content="https://desertsagerentals.com/images/hero-service-area.jpg">
   <meta property="og:url" content="https://desertsagerentals.com/service-area.html">
   <meta property="og:type" content="website">
@@ -34,6 +67,7 @@
         <a href="/service-area.html" class="active">Service Area</a>
         <a href="/faqs.html">FAQs</a>
         <a href="/reviews.html">Reviews</a>
+        <a href="/rental-analysis.html">Free Analysis</a>
         <a href="/contact.html">Contact</a>
       </nav>
       <div class="header-social">
@@ -64,7 +98,7 @@
 
   <!-- Intro -->
   <section class="content-block">
-    <div class="container">
+    <div class="container fade-in">
       <p>Rooted in Central Oregon, Desert Sage Rentals is proud to serve homeowners across the many corners of Oregon -- especially the ones that feel a little quieter, a little more special. We love the properties tucked away on rural roads, perched in small towns, or set in the "hidden gem" destinations that make guests feel like they've discovered something unforgettable.</p>
 
       <p>From cozy mountain cabins and high-desert homesteads to riverside hideouts, wine-country cottages, and coastal escapes, we welcome unique homes of all kinds.</p>
@@ -78,7 +112,8 @@
   <!-- Region Cards -->
   <section class="section section--light">
     <div class="container">
-      <div class="region-grid">
+      <h2 class="fade-in" style="text-align: center; margin-bottom: 0;">Vacation Rental Management Across Oregon</h2>
+      <div class="region-grid fade-in-children">
 
         <!-- Central Oregon -->
         <div class="region-card">
@@ -159,10 +194,10 @@
 
   <!-- Contact CTA -->
   <section class="section">
-    <div class="container text-center">
-      <h2>Get In Touch</h2>
-      <p style="font-size: 1.1rem;"><a href="mailto:contact@desertsagerentals.com" style="text-decoration: underline; text-underline-offset: 3px;">contact@desertsagerentals.com</a></p>
-      <p style="font-size: 1.1rem;"><a href="tel:5413621879">541-362-1879</a> (text/call)</p>
+    <div class="container text-center fade-in">
+      <h2>Own a Property in Oregon?</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 0.5rem;"><a href="/rental-analysis.html" style="text-decoration: underline; text-underline-offset: 3px;">Get a free rental analysis</a> to see what your property could earn</p>
+      <p style="font-size: 1.1rem;"><a href="mailto:contact@desertsagerentals.com" style="text-decoration: underline; text-underline-offset: 3px;">contact@desertsagerentals.com</a> &nbsp;|&nbsp; <a href="tel:5413621879">541-362-1879</a></p>
     </div>
   </section>
 
@@ -189,6 +224,12 @@
     nav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); nav.classList.remove('open'); }); });
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => observer.observe(el));
   </script>
 
 </body>

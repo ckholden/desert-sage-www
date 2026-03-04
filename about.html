@@ -4,14 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/logo.png">
-  <title>What We Do | Desert Sage Rentals</title>
-  <meta name="description" content="Desert Sage Rentals offers full-service vacation rental management with a hands-on, owner-led approach in Central Oregon and across the state.">
+  <title>Airbnb Management Services Oregon | Desert Sage Rentals</title>
+  <meta name="description" content="Full-service Airbnb and vacation rental management in Prineville, Bend, and across Oregon. Hands-on, owner-led approach with 24/7 guest support and consulting for new hosts.">
   <link rel="canonical" href="https://desertsagerentals.com/about.html">
-  <meta property="og:title" content="What We Do | Desert Sage Rentals">
-  <meta property="og:description" content="Full-service vacation rental management with a hands-on, owner-led approach. Consulting services for new hosts.">
+  <meta property="og:title" content="Airbnb Management Services Oregon | Desert Sage Rentals">
+  <meta property="og:description" content="Full-service vacation rental management with a hands-on, owner-led approach in Central Oregon.">
   <meta property="og:image" content="https://desertsagerentals.com/images/hero-about.jpg">
   <meta property="og:url" content="https://desertsagerentals.com/about.html">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Desert Sage Rentals">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Desert Sage Rentals",
+    "description": "Full-service Airbnb and vacation rental management company based in Central Oregon, specializing in rural and unique-stay properties.",
+    "url": "https://desertsagerentals.com/about.html",
+    "telephone": "+1-541-362-1879",
+    "email": "contact@desertsagerentals.com",
+    "serviceType": ["Vacation Rental Management", "Airbnb Management", "Short-Term Rental Consulting"],
+    "areaServed": { "@type": "State", "name": "Oregon" }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,6 +48,7 @@
         <a href="/service-area.html">Service Area</a>
         <a href="/faqs.html">FAQs</a>
         <a href="/reviews.html">Reviews</a>
+        <a href="/rental-analysis.html">Free Analysis</a>
         <a href="/contact.html">Contact</a>
       </nav>
       <div class="header-social">
@@ -64,22 +79,28 @@
   <!-- Content -->
   <section class="content-block">
     <div class="container">
-      <p>Desert Sage Rentals is your boutique vacation rental partner, rooted in Central Oregon and thoughtfully expanding throughout Oregon's most memorable places. We're drawn to the quieter corners of the state -- the rural roads, small towns, mountain communities, river bends, and coastal hideaways that give Oregon its charm. These are the homes and destinations where hospitality still feels personal, and we're proud to help them shine.</p>
+      <div class="fade-in">
+        <h2>Full-Service Airbnb Management</h2>
+        <p>Desert Sage Rentals is your boutique vacation rental partner, rooted in Central Oregon and thoughtfully expanding throughout Oregon's most memorable places. We're drawn to the quieter corners of the state -- the rural roads, small towns, mountain communities, river bends, and coastal hideaways that give Oregon its charm. These are the homes and destinations where hospitality still feels personal, and we're proud to help them shine.</p>
 
-      <p>We offer full-service vacation rental management with a hands-on, owner-led approach. From reservations and cleaning coordination to guest communication and 24/7 support, we handle every detail with care. Staying intentionally small allows us to give each property the tailored attention big companies simply can't offer.</p>
+        <p>We offer full-service vacation rental management with a hands-on, owner-led approach. From reservations and cleaning coordination to guest communication and 24/7 support, we handle every detail with care. Staying intentionally small allows us to give each property the tailored attention big companies simply can't offer.</p>
+      </div>
 
-      <p>For homeowners launching their first rental, our consulting services make the process clear, grounded, and stress-free -- whether your property is in a well-loved destination or tucked away in a hidden gem across the state.</p>
+      <div class="fade-in">
+        <h2>Vacation Rental Consulting in Oregon</h2>
+        <p>For homeowners launching their first rental, our consulting services make the process clear, grounded, and stress-free -- whether your property is in a well-loved destination or tucked away in a hidden gem across the state.</p>
 
-      <p>At Desert Sage Rentals, every home matters and every guest experience counts. We bring neighborly hospitality to every stay, no matter where your property lives on the map.</p>
+        <p>At Desert Sage Rentals, every home matters and every guest experience counts. We bring neighborly hospitality to every stay, no matter where your property lives on the map.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Contact CTA -->
+  <!-- CTA -->
   <section class="section section--light">
-    <div class="container text-center">
-      <h2>Get In Touch</h2>
-      <p style="font-size: 1.1rem;"><a href="mailto:contact@desertsagerentals.com" style="text-decoration: underline; text-underline-offset: 3px;">contact@desertsagerentals.com</a></p>
-      <p style="font-size: 1.1rem;"><a href="tel:5413621879">541-362-1879</a> (call/text)</p>
+    <div class="container text-center fade-in">
+      <h2>Ready to Learn More?</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 0.5rem;"><a href="/rental-analysis.html" style="text-decoration: underline; text-underline-offset: 3px;">Get a free rental analysis</a> for your property</p>
+      <p style="font-size: 1.1rem;"><a href="mailto:contact@desertsagerentals.com" style="text-decoration: underline; text-underline-offset: 3px;">contact@desertsagerentals.com</a> &nbsp;|&nbsp; <a href="tel:5413621879">541-362-1879</a></p>
     </div>
   </section>
 
@@ -106,6 +127,12 @@
     nav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); nav.classList.remove('open'); }); });
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => observer.observe(el));
   </script>
 
 </body>

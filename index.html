@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/logo.png">
-  <title>Desert Sage Rentals | Explore and Book Your Stay Today</title>
-  <meta name="description" content="Desert Sage Rentals — boutique vacation rental management in Central Oregon. Full-service Airbnb management, consulting, and 24/7 guest support for rural and unique-stay properties across Oregon.">
+  <title>Vacation Rental Management in Central Oregon | Desert Sage Rentals</title>
+  <meta name="description" content="Desert Sage Rentals offers full-service vacation rental management in Prineville, Bend, Redmond, and across Oregon. Airbnb management, consulting, and 24/7 guest support for your property.">
   <link rel="canonical" href="https://desertsagerentals.com/">
   <!-- Open Graph -->
-  <meta property="og:title" content="Desert Sage Rentals | Boutique Vacation Rental Management">
-  <meta property="og:description" content="Full-service Airbnb management for rural and unique-stay properties across Oregon. Book directly and save!">
+  <meta property="og:title" content="Vacation Rental Management in Central Oregon | Desert Sage Rentals">
+  <meta property="og:description" content="Full-service Airbnb management in Prineville, Bend, and across Oregon. Book directly and save!">
   <meta property="og:image" content="https://desertsagerentals.com/images/hero-home.jpg">
   <meta property="og:url" content="https://desertsagerentals.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Desert Sage Rentals">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Desert Sage Rentals | Boutique Vacation Rental Management">
-  <meta name="twitter:description" content="Full-service Airbnb management for rural and unique-stay properties across Oregon.">
+  <meta name="twitter:title" content="Vacation Rental Management in Central Oregon | Desert Sage Rentals">
+  <meta name="twitter:description" content="Full-service Airbnb management in Prineville, Bend, and across Oregon.">
   <meta name="twitter:image" content="https://desertsagerentals.com/images/hero-home.jpg">
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -25,18 +25,47 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Desert Sage Rentals",
-    "description": "Boutique vacation rental management based in Central Oregon, expanding state-wide. Full-service Airbnb management, consulting, and 24/7 guest support.",
+    "description": "Boutique vacation rental management in Prineville, Bend, Redmond, and across Oregon. Full-service Airbnb management, consulting, and 24/7 guest support.",
     "url": "https://desertsagerentals.com",
     "telephone": "+1-541-362-1879",
     "email": "contact@desertsagerentals.com",
     "image": "https://desertsagerentals.com/images/logo.png",
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Prineville",
       "addressRegion": "OR",
+      "postalCode": "97754",
       "addressCountry": "US"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "44.3001",
+      "longitude": "-120.7345"
+    },
     "areaServed": [
+      { "@type": "City", "name": "Prineville, OR" },
+      { "@type": "City", "name": "Bend, OR" },
+      { "@type": "City", "name": "Redmond, OR" },
+      { "@type": "City", "name": "Sisters, OR" },
+      { "@type": "City", "name": "Sunriver, OR" },
+      { "@type": "City", "name": "La Pine, OR" },
+      { "@type": "City", "name": "Madras, OR" },
+      { "@type": "City", "name": "Hood River, OR" },
+      { "@type": "City", "name": "The Dalles, OR" },
       { "@type": "State", "name": "Oregon" }
+    ],
+    "serviceType": [
+      "Vacation Rental Management",
+      "Airbnb Management",
+      "Short-Term Rental Management",
+      "Vacation Rental Consulting"
+    ],
+    "knowsAbout": [
+      "Airbnb hosting",
+      "vacation rental management",
+      "short-term rental operations",
+      "Central Oregon vacation rentals",
+      "rural vacation rental management"
     ],
     "sameAs": [
       "https://www.instagram.com/desertsagerentals",
@@ -67,6 +96,7 @@
         <a href="/service-area.html">Service Area</a>
         <a href="/faqs.html">FAQs</a>
         <a href="/reviews.html">Reviews</a>
+        <a href="/rental-analysis.html">Free Analysis</a>
         <a href="/contact.html">Contact</a>
       </nav>
       <div class="header-social">
@@ -99,14 +129,14 @@
   <!-- CTA Buttons -->
   <section class="section">
     <div class="container">
-      <div class="cta-grid">
+      <div class="cta-grid fade-in-children">
         <a href="https://www.airbnb.com/users/profile/1462653620796962283" target="_blank" rel="noopener" class="cta-btn">
           Vacation Rentals (Airbnb)
         </a>
         <a href="https://book.desertsagerentals.com/en/all-properties" target="_blank" rel="noopener" class="cta-btn cta-btn--primary">
           Vacation Rentals (Book Directly &amp; Save!)
         </a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSddP9LKYKI2SdEz7nKr07YaOCHr53DUwlr6NfaWXzHbF9AeuA/viewform" target="_blank" rel="noopener" class="cta-btn">
+        <a href="/rental-analysis.html" class="cta-btn">
           Get A Free Rental Analysis
         </a>
       </div>
@@ -176,6 +206,12 @@
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 10);
     });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => observer.observe(el));
   </script>
 
 </body>

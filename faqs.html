@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/logo.png">
-  <title>FAQs | Desert Sage Rentals</title>
-  <meta name="description" content="Frequently asked questions about Desert Sage Rentals — services, pricing, areas served, Airbnb management, and how to get started.">
+  <title>Vacation Rental Management FAQ | Desert Sage Rentals</title>
+  <meta name="description" content="FAQ about vacation rental management with Desert Sage Rentals. Learn about Airbnb management services, pricing, areas served in Oregon, and how to get started.">
   <link rel="canonical" href="https://desertsagerentals.com/faqs.html">
-  <meta property="og:title" content="FAQs | Desert Sage Rentals">
-  <meta property="og:description" content="Answers to common questions about vacation rental management services from Desert Sage Rentals.">
+  <meta property="og:title" content="Vacation Rental Management FAQ | Desert Sage Rentals">
+  <meta property="og:description" content="Answers to common questions about vacation rental and Airbnb management services from Desert Sage Rentals.">
+  <meta property="og:site_name" content="Desert Sage Rentals">
   <meta property="og:url" content="https://desertsagerentals.com/faqs.html">
   <meta property="og:type" content="website">
   <!-- FAQ Structured Data -->
@@ -74,6 +75,7 @@
         <a href="/service-area.html">Service Area</a>
         <a href="/faqs.html" class="active">FAQs</a>
         <a href="/reviews.html">Reviews</a>
+        <a href="/rental-analysis.html">Free Analysis</a>
         <a href="/contact.html">Contact</a>
       </nav>
       <div class="header-social">
@@ -103,7 +105,7 @@
   <!-- FAQ Accordion -->
   <section class="section">
     <div class="container">
-      <div class="faq-list">
+      <div class="faq-list fade-in">
 
         <div class="faq-item">
           <button class="faq-question">
@@ -322,6 +324,12 @@
     nav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); nav.classList.remove('open'); }); });
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => observer.observe(el));
 
     // FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(btn => {

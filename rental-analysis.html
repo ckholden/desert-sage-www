@@ -4,14 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/images/logo.png">
-  <title>Contact Desert Sage Rentals | Oregon Vacation Rental Manager</title>
-  <meta name="description" content="Contact Desert Sage Rentals for vacation rental management in Prineville, Bend, and Oregon. Email contact@desertsagerentals.com or call 541-362-1879.">
-  <link rel="canonical" href="https://desertsagerentals.com/contact.html">
-  <meta property="og:title" content="Contact Desert Sage Rentals | Oregon Vacation Rental Manager">
-  <meta property="og:description" content="Get in touch for vacation rental management in Prineville, Bend, and across Oregon.">
-  <meta property="og:site_name" content="Desert Sage Rentals">
-  <meta property="og:url" content="https://desertsagerentals.com/contact.html">
+  <title>Free Rental Analysis | How Much Can Your Property Earn?</title>
+  <meta name="description" content="Get a free vacation rental analysis for your Oregon property. See estimated revenue, occupancy projections, and a custom management proposal from Desert Sage Rentals.">
+  <link rel="canonical" href="https://desertsagerentals.com/rental-analysis.html">
+  <meta property="og:title" content="Free Rental Analysis | Desert Sage Rentals">
+  <meta property="og:description" content="Find out how much your property could earn as a vacation rental. Free analysis includes revenue estimates, market comparison, and management proposal.">
+  <meta property="og:url" content="https://desertsagerentals.com/rental-analysis.html">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Desert Sage Rentals">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Free Vacation Rental Analysis",
+    "description": "Complimentary rental analysis including estimated annual revenue, competitive market comparison, occupancy projections, and a custom management proposal for Oregon property owners.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Desert Sage Rentals",
+      "url": "https://desertsagerentals.com",
+      "telephone": "+1-541-362-1879",
+      "email": "contact@desertsagerentals.com"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Oregon"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free rental analysis for Oregon property owners"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,8 +59,8 @@
         <a href="/service-area.html">Service Area</a>
         <a href="/faqs.html">FAQs</a>
         <a href="/reviews.html">Reviews</a>
-        <a href="/rental-analysis.html">Free Analysis</a>
-        <a href="/contact.html" class="active">Contact</a>
+        <a href="/rental-analysis.html" class="active">Free Analysis</a>
+        <a href="/contact.html">Contact</a>
       </nav>
       <div class="header-social">
         <a href="https://www.instagram.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Instagram">
@@ -57,51 +82,98 @@
   <section class="hero hero--short" style="min-height: 30vh;">
     <div class="hero__bg" style="background-color: var(--off-white);"></div>
     <div class="hero__content">
-      <h1 style="color: var(--black);">Connect &amp; Stay in Touch</h1>
-      <p style="color: var(--dark-gray);">Contact us today to learn more about our vacation rentals or to inquire about having your property professionally managed</p>
+      <h1 style="color: var(--black);">Free Rental Analysis</h1>
+      <p style="color: var(--dark-gray);">Find out what your Oregon property could earn as a vacation rental</p>
     </div>
   </section>
 
-  <!-- Contact Form + Info -->
+  <!-- Form + Info -->
   <section class="section">
     <div class="container">
       <div class="contact-grid fade-in">
 
         <!-- Form -->
         <div>
-          <h2>Contact Us</h2>
-          <form action="https://formspree.io/f/mjgenydq" method="POST" id="contact-form">
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" id="name" name="name" required>
+          <h2>Tell Us About Your Property</h2>
+          <p style="margin-bottom: 2rem; color: var(--medium-gray);">Fill out the form below and we'll send you a complimentary rental analysis with estimated earnings and recommendations.</p>
+          <form action="https://formspree.io/f/mjgenydq" method="POST" id="analysis-form">
+            <input type="hidden" name="_subject" value="New Rental Analysis Request">
+
+            <div class="analysis-form-grid">
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+              <div class="form-group">
+                <label for="address">Property Address *</label>
+                <input type="text" id="address" name="address" required>
+              </div>
+              <div class="form-group">
+                <label for="property-type">Property Type</label>
+                <select id="property-type" name="property_type">
+                  <option value="" disabled selected>Select one...</option>
+                  <option value="cabin">Cabin</option>
+                  <option value="house">House</option>
+                  <option value="apartment-condo">Apartment / Condo</option>
+                  <option value="unique-stay">Unique Stay</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="rental-status">Current Rental Status</label>
+                <select id="rental-status" name="rental_status">
+                  <option value="" disabled selected>Select one...</option>
+                  <option value="new">New to short-term rental</option>
+                  <option value="self-managing">Currently self-managing</option>
+                  <option value="other-manager">Currently with another manager</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bedrooms">Bedrooms</label>
+                <input type="number" id="bedrooms" name="bedrooms" min="0" max="20">
+              </div>
+              <div class="form-group">
+                <label for="bathrooms">Bathrooms</label>
+                <input type="number" id="bathrooms" name="bathrooms" min="0" max="20" step="0.5">
+              </div>
+              <div class="form-group form-group--full">
+                <label for="nightly-rate">Estimated Nightly Rate ($, optional)</label>
+                <input type="number" id="nightly-rate" name="nightly_rate" min="0" placeholder="e.g. 150">
+              </div>
+              <div class="form-group form-group--full">
+                <label for="goals">Goals / Questions</label>
+                <textarea id="goals" name="goals" placeholder="Tell us about your goals for this property..."></textarea>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="form-submit">Send</button>
+
+            <button type="submit" class="form-submit">Request My Free Analysis</button>
           </form>
           <p id="form-status" style="margin-top: 1rem; display: none; font-weight: 600;"></p>
         </div>
 
-        <!-- Contact Info -->
+        <!-- Sidebar -->
         <div class="contact-info">
-          <h3>Reach Out Directly</h3>
-          <p><strong>Email:</strong><br><a href="mailto:contact@desertsagerentals.com">contact@desertsagerentals.com</a></p>
-          <p><strong>Phone:</strong><br><a href="tel:5413621879">541-362-1879</a> (call/text)</p>
-          <p style="margin-top: 2rem;"><strong>Follow Us</strong></p>
-          <p>
-            <a href="https://www.instagram.com/desertsagerentals" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 3px; margin-right: 1.5rem;">Instagram</a>
-            <a href="https://www.facebook.com/desertsagerentals" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 3px;">Facebook</a>
-          </p>
+          <h3>What You'll Receive</h3>
+          <p>Our complimentary rental analysis includes:</p>
+          <ul style="list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li style="margin-bottom: 0.5rem;">Estimated annual revenue potential</li>
+            <li style="margin-bottom: 0.5rem;">Competitive market comparison</li>
+            <li style="margin-bottom: 0.5rem;">Occupancy rate projections</li>
+            <li style="margin-bottom: 0.5rem;">Recommendations for maximizing earnings</li>
+            <li style="margin-bottom: 0.5rem;">Custom management proposal</li>
+          </ul>
+          <p style="margin-top: 2rem;"><strong>Prefer to chat?</strong></p>
+          <p><a href="mailto:contact@desertsagerentals.com">contact@desertsagerentals.com</a></p>
+          <p><a href="tel:5413621879">541-362-1879</a> (call/text)</p>
+          <p style="margin-top: 2rem;"><a href="/service-area.html" style="text-decoration: underline; text-underline-offset: 3px;">View our service areas</a></p>
         </div>
 
       </div>
@@ -133,14 +205,8 @@
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
 
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => observer.observe(el));
-
-    // Form submission with Formspree
-    const form = document.getElementById('contact-form');
+    // Form submission
+    const form = document.getElementById('analysis-form');
     const status = document.getElementById('form-status');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -152,7 +218,7 @@
           headers: { 'Accept': 'application/json' }
         });
         if (res.ok) {
-          status.textContent = 'Thank you for your inquiry! We will be in touch with you shortly.';
+          status.textContent = 'Thank you! We\'ll review your property details and send your rental analysis shortly.';
           status.style.color = '#65755B';
           status.style.display = 'block';
           form.reset();
@@ -167,6 +233,12 @@
         status.style.display = 'block';
       }
     });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .fade-in-children').forEach(el => observer.observe(el));
   </script>
 
 </body>
