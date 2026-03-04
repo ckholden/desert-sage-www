@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://desertsagerentals.com/sitemap.xml

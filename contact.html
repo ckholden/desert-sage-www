@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Desert Sage Rentals</title>
+  <meta name="description" content="Contact Desert Sage Rentals — email contact@desertsagerentals.com or call 541-362-1879. Vacation rental management inquiries welcome.">
+  <link rel="canonical" href="https://desertsagerentals.com/contact.html">
+  <meta property="og:title" content="Contact | Desert Sage Rentals">
+  <meta property="og:description" content="Get in touch with Desert Sage Rentals for vacation rental management inquiries.">
+  <meta property="og:url" content="https://desertsagerentals.com/contact.html">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="/images/logo.png" alt="Desert Sage Rentals" class="logo-img">
+        </a>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="/">Home</a>
+        <a href="https://book.desertsagerentals.com/en/all-properties" target="_blank" rel="noopener">Properties</a>
+        <a href="/about.html">What We Do</a>
+        <a href="/service-area.html">Service Area</a>
+        <a href="/faqs.html">FAQs</a>
+        <a href="/reviews.html">Reviews</a>
+        <a href="/contact.html" class="active">Contact</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero--short" style="min-height: 30vh;">
+    <div class="hero__bg" style="background-color: var(--off-white);"></div>
+    <div class="hero__content">
+      <h1 style="color: var(--black);">Connect &amp; Stay in Touch</h1>
+      <p style="color: var(--dark-gray);">Contact us today to learn more about our vacation rentals or to inquire about having your property professionally managed</p>
+    </div>
+  </section>
+
+  <!-- Contact Form + Info -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <div>
+          <h2>Contact Us</h2>
+          <form action="https://formspree.io/f/mjgenydq" method="POST" id="contact-form">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send</button>
+          </form>
+          <p id="form-status" style="margin-top: 1rem; display: none; font-weight: 600;"></p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3>Reach Out Directly</h3>
+          <p><strong>Email:</strong><br><a href="mailto:contact@desertsagerentals.com">contact@desertsagerentals.com</a></p>
+          <p><strong>Phone:</strong><br><a href="tel:5413621879">541-362-1879</a> (call/text)</p>
+          <p style="margin-top: 2rem;"><strong>Follow Us</strong></p>
+          <p>
+            <a href="https://www.instagram.com/desertsagerentals" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 3px; margin-right: 1.5rem;">Instagram</a>
+            <a href="https://www.facebook.com/desertsagerentals" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 3px;">Facebook</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__social">
+        <a href="https://www.instagram.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <p class="footer__email"><a href="mailto:contact@desertsagerentals.com">contact@desertsagerentals.com</a></p>
+      <p class="footer__copy">&copy; 2026 Desert Sage Rentals. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); nav.classList.toggle('open'); });
+    nav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); nav.classList.remove('open'); }); });
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+
+    // Form submission with Formspree
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          status.textContent = 'Thank you for your inquiry! We will be in touch with you shortly.';
+          status.style.color = 'green';
+          status.style.display = 'block';
+          form.reset();
+        } else {
+          status.textContent = 'Something went wrong. Please try again or email us directly.';
+          status.style.color = 'red';
+          status.style.display = 'block';
+        }
+      } catch {
+        status.textContent = 'Something went wrong. Please try again or email us directly.';
+        status.style.color = 'red';
+        status.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
