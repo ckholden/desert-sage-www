@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <title>Our Rentals | Desert Sage Rentals — Central Oregon</title>
+  <meta name="description" content="Browse Desert Sage Rentals' vacation homes in Prineville and Central Oregon — Prineville Reservoir, Ochoco Lake, and downtown Prineville. Book direct and save.">
+  <link rel="canonical" href="https://desertsagerentals.com/rentals.html">
+  <meta property="og:title" content="Our Rentals | Desert Sage Rentals — Central Oregon">
+  <meta property="og:description" content="Browse our vacation homes across Prineville and Central Oregon. Book direct and save.">
+  <meta property="og:image" content="https://desertsagerentals.com/images/properties/bitterroot-butte.jpg">
+  <meta property="og:url" content="https://desertsagerentals.com/rentals.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Desert Sage Rentals">
+  <link rel="preload" as="image" href="/images/properties/bitterroot-butte.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* --- Rentals gallery (preview of the warmer, photo-forward direction) --- */
+    .rentals-intro { background: #F5F0E8; text-align: center; padding: 3.5rem var(--gutter) 2.5rem; }
+    .rentals-intro h1 { font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--sage-dark); font-weight: 600; }
+    .rentals-intro p { max-width: 640px; margin: 0.75rem auto 0; color: var(--dark-gray); font-size: 1.05rem; }
+    .rentals-section { padding: 3rem var(--gutter) 4rem; background: #FBF9F5; }
+    .rentals-grid { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+    .rental-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 14px rgba(101,117,91,0.10); display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease; }
+    .rental-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(101,117,91,0.18); }
+    .rental-card__img { aspect-ratio: 3/2; width: 100%; object-fit: cover; display: block; background: #ece7dd; }
+    .rental-card__body { padding: 1.25rem 1.35rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .rental-card__loc { font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-bottom: 0.3rem; }
+    .rental-card__name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--dark-gray); line-height: 1.15; margin-bottom: 0.55rem; }
+    .rental-card__blurb { color: var(--medium-gray); font-size: 0.92rem; line-height: 1.6; flex: 1; }
+    .rental-card__btn { margin-top: 1.15rem; align-self: flex-start; background: var(--sage); color: #fff; font-family: var(--font-body); font-weight: 600; font-size: 0.92rem; padding: 0.6rem 1.15rem; border-radius: 8px; text-decoration: none; transition: background .2s ease; }
+    .rental-card__btn:hover { background: var(--sage-dark); }
+    .rentals-loading { text-align: center; color: var(--medium-gray); padding: 2rem; grid-column: 1/-1; }
+    .rentals-owner-cta { background: #F5F0E8; text-align: center; padding: 3rem var(--gutter); }
+    .rentals-owner-cta h2 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--sage-dark); margin-bottom: 0.5rem; }
+    .rentals-owner-cta p { color: var(--dark-gray); margin-bottom: 1.25rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="/images/logo.png" alt="Desert Sage Rentals" class="logo-img" width="50" height="50">
+        </a>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="/">Home</a>
+        <a href="/rentals.html" class="active">Our Rentals</a>
+        <a href="/about.html">What We Do</a>
+        <a href="/service-area.html">Service Area</a>
+        <a href="/faqs.html">FAQs</a>
+        <a href="/reviews.html">Reviews</a>
+        <a href="/rental-analysis.html">Free Analysis</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://www.instagram.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="rentals-intro">
+    <h1>Our Rentals</h1>
+    <p>A handful of distinctive homes across Central Oregon — from Prineville Reservoir and Ochoco Lake to the heart of downtown Prineville. Book direct with us and skip the platform fees.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="rentals-section">
+    <div class="rentals-grid" id="rentals-grid">
+      <div class="rentals-loading">Loading our homes…</div>
+    </div>
+  </section>
+
+  <!-- Owner CTA -->
+  <section class="rentals-owner-cta">
+    <h2>Own a property in Oregon?</h2>
+    <p>We manage homes like these end-to-end. See what yours could earn.</p>
+    <a href="/rental-analysis.html" class="cta-btn cta-btn--primary">Get a Free Rental Analysis</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__social">
+        <a href="https://www.instagram.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+      <p class="footer__email"><a href="mailto:contact@desertsagerentals.com">contact@desertsagerentals.com</a></p>
+      <p class="footer__copy">&copy; 2026 Desert Sage Rentals. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); nav.classList.toggle('open'); });
+    nav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); nav.classList.remove('open'); }); });
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
+
+    // Render rentals from the data file — add a property = add a JSON entry + a photo.
+    function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    fetch('properties.json')
+      .then(r => r.json())
+      .then(list => {
+        const grid = document.getElementById('rentals-grid');
+        if (!list.length) { grid.innerHTML = '<div class="rentals-loading">No rentals to show yet.</div>'; return; }
+        grid.innerHTML = list.map(p =>
+          '<article class="rental-card">' +
+            '<img class="rental-card__img" src="' + esc(p.image) + '" alt="' + esc(p.name) + ' — ' + esc(p.location) + '" loading="lazy" width="900" height="600">' +
+            '<div class="rental-card__body">' +
+              (p.location ? '<div class="rental-card__loc">' + esc(p.location) + '</div>' : '') +
+              '<h2 class="rental-card__name">' + esc(p.name) + '</h2>' +
+              '<p class="rental-card__blurb">' + esc(p.blurb) + '</p>' +
+              '<a class="rental-card__btn" href="' + esc(p.bookUrl) + '" target="_blank" rel="noopener">View &amp; Book &rarr;</a>' +
+            '</div>' +
+          '</article>'
+        ).join('');
+      })
+      .catch(() => {
+        document.getElementById('rentals-grid').innerHTML = '<div class="rentals-loading">Couldn’t load our homes right now. Please <a href="/contact.html">contact us</a>.</div>';
+      });
+  </script>
+
+</body>
+</html>

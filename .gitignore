@@ -1,3 +1,4 @@
 .claude/
 node_modules/
 *.tmp
+_lodgify-raw.json
