@@ -927,3 +927,25 @@ p {
   box-shadow: 0 0 0 3px rgba(122, 139, 111, 0.55);
   border-radius: 4px;
 }
+
+/* --- Shared feature cards (home + about + future pages) --- */
+.home-h2 { font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--sage-dark); text-align: center; font-weight: 600; }
+.home-lead { max-width: 680px; margin: 0.6rem auto 2.25rem; text-align: center; color: var(--dark-gray); font-size: 1.08rem; line-height: 1.7; }
+.home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: var(--max-width); margin: 0 auto; }
+.home-feature { background: #fff; border-radius: 12px; padding: 1.6rem 1.5rem; box-shadow: 0 2px 12px rgba(101,117,91,0.08); }
+.home-feature h3 { font-family: var(--font-heading); font-size: 1.3rem; color: var(--sage-dark); margin-bottom: 0.4rem; font-weight: 600; }
+.home-feature p { color: var(--medium-gray); font-size: 0.95rem; line-height: 1.6; }
+
+/* --- About page --- */
+.about-stats { background: var(--sage-dark); color: #fff; padding: 2.25rem var(--gutter); }
+.about-stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; max-width: var(--max-width); margin: 0 auto; text-align: center; }
+.about-stat__num { display: block; font-family: var(--font-heading); font-size: 2.3rem; font-weight: 700; line-height: 1; }
+.about-stat__lbl { display: block; margin-top: 0.4rem; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85; }
+.about-intro { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.5rem; align-items: center; }
+.about-intro__text h2 { font-family: var(--font-heading); color: var(--sage-dark); font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 1rem; }
+.about-intro__img { width: 100%; border-radius: 14px; box-shadow: 0 6px 22px rgba(101,117,91,0.18); display: block; }
+.about-services { background: #FBF9F5; }
+@media (max-width: 768px) {
+  .about-intro { grid-template-columns: 1fr; gap: 1.75rem; }
+  .about-intro__img { order: -1; }
+}
