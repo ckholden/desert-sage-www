@@ -3,7 +3,7 @@
 /* --- CSS Variables --- */
 :root {
   --white: #ffffff;
-  --off-white: #f5f5f5;
+  --off-white: #F5F0E8;
   --light-gray: #d9d9d9;
   --medium-gray: #797979;
   --dark-gray: #333333;
@@ -314,37 +314,39 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem 2rem;
+  padding: 1.1rem 2.25rem;
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
-  border: 2px solid var(--black);
-  color: var(--black);
+  border: 2px solid var(--sage);
+  color: var(--sage-dark);
   background: var(--white);
+  border-radius: 999px;
   transition: all var(--transition);
   cursor: pointer;
   letter-spacing: 0.02em;
 }
 
 .cta-btn:hover {
-  background: var(--black);
+  background: var(--sage);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(122, 139, 111, 0.3);
 }
 
 .cta-btn--primary {
-  background: var(--black);
+  background: var(--sage);
+  border-color: var(--sage);
   color: var(--white);
 }
 
 .cta-btn--primary:hover {
-  background: var(--sage);
-  border-color: var(--sage);
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(122, 139, 111, 0.3);
+  box-shadow: 0 6px 16px rgba(101, 117, 91, 0.35);
 }
 
 /* ===== MARQUEE ===== */
@@ -682,7 +684,7 @@ p {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: var(--black);
+  background: var(--sage-dark);
   color: var(--white);
   padding: 3rem 0;
   text-align: center;
