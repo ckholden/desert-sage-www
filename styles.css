@@ -699,6 +699,23 @@ p {
   color: var(--white);
 }
 
+.footer__contact {
+  margin-bottom: 0.65rem;
+  font-size: 0.95rem;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer__links a {
+  font-size: 0.9rem;
+}
+
 .footer__social {
   display: flex;
   justify-content: center;

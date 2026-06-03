@@ -71,7 +71,7 @@
           <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -193,7 +193,8 @@
           <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
       </div>
-      <p class="footer__email"><a href="mailto:contact@desertsagerentals.com">contact@desertsagerentals.com</a></p>
+      <p class="footer__contact"><a href="tel:+15413621879">541-362-1879</a> &nbsp;&middot;&nbsp; <a href="mailto:contact@desertsagerentals.com">contact@desertsagerentals.com</a></p>
+      <nav class="footer__links" aria-label="Footer"><a href="/rentals">Our Rentals</a><a href="/rental-analysis">Free Analysis</a><a href="/contact">Contact</a></nav>
       <p class="footer__copy">&copy; 2026 Desert Sage Rentals. All rights reserved.</p>
     </div>
   </footer>
@@ -202,7 +203,8 @@
     // Nav
     const hamburger = document.getElementById('hamburger');
     const nav = document.getElementById('nav');
-    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); nav.classList.toggle('open'); });
+    hamburger.addEventListener('click', () => { const o = hamburger.classList.toggle('open'); nav.classList.toggle('open'); hamburger.setAttribute('aria-expanded', o); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) { hamburger.classList.remove('open'); nav.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); } });
     nav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); nav.classList.remove('open'); }); });
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 10); });
