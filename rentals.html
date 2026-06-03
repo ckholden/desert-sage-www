@@ -6,11 +6,11 @@
   <link rel="icon" type="image/png" href="/images/logo.png">
   <title>Our Rentals | Desert Sage Rentals — Central Oregon</title>
   <meta name="description" content="Browse Desert Sage Rentals' vacation homes in Prineville and Central Oregon — Prineville Reservoir, Ochoco Lake, and downtown Prineville. Book direct and save.">
-  <link rel="canonical" href="https://desertsagerentals.com/rentals.html">
+  <link rel="canonical" href="https://desertsagerentals.com/rentals">
   <meta property="og:title" content="Our Rentals | Desert Sage Rentals — Central Oregon">
   <meta property="og:description" content="Browse our vacation homes across Prineville and Central Oregon. Book direct and save.">
   <meta property="og:image" content="https://desertsagerentals.com/images/properties/bitterroot-butte.jpg">
-  <meta property="og:url" content="https://desertsagerentals.com/rentals.html">
+  <meta property="og:url" content="https://desertsagerentals.com/rentals">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Desert Sage Rentals">
   <link rel="preload" as="image" href="/images/properties/bitterroot-butte.jpg">
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     /* --- Rentals gallery (preview of the warmer, photo-forward direction) --- */
-    .rentals-intro { background: #F5F0E8; text-align: center; padding: 3.5rem var(--gutter) 2.5rem; }
+    .rentals-intro { background: #F5F0E8; text-align: center; padding: calc(var(--header-height) + 2.5rem) var(--gutter) 2.5rem; }
     .rentals-intro h1 { font-family: var(--font-heading); font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--sage-dark); font-weight: 600; }
     .rentals-intro p { max-width: 640px; margin: 0.75rem auto 0; color: var(--dark-gray); font-size: 1.05rem; }
     .rentals-section { padding: 3rem var(--gutter) 4rem; background: #FBF9F5; }
@@ -32,8 +32,11 @@
     .rental-card__loc { font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-bottom: 0.3rem; }
     .rental-card__name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--dark-gray); line-height: 1.15; margin-bottom: 0.55rem; }
     .rental-card__blurb { color: var(--medium-gray); font-size: 0.92rem; line-height: 1.6; flex: 1; }
-    .rental-card__btn { margin-top: 1.15rem; align-self: flex-start; background: var(--sage); color: #fff; font-family: var(--font-body); font-weight: 600; font-size: 0.92rem; padding: 0.6rem 1.15rem; border-radius: 8px; text-decoration: none; transition: background .2s ease; }
+    .rental-card__actions { margin-top: 1.15rem; display: flex; flex-wrap: wrap; gap: 0.55rem; }
+    .rental-card__btn { background: var(--sage); color: #fff; font-family: var(--font-body); font-weight: 600; font-size: 0.88rem; padding: 0.58rem 1.05rem; border-radius: 8px; text-decoration: none; transition: background .2s ease; }
     .rental-card__btn:hover { background: var(--sage-dark); }
+    .rental-card__btn--alt { background: #fff; color: var(--sage-dark); border: 1.5px solid var(--sage); }
+    .rental-card__btn--alt:hover { background: #F0F4EE; }
     .rentals-loading { text-align: center; color: var(--medium-gray); padding: 2rem; grid-column: 1/-1; }
     .rentals-owner-cta { background: #F5F0E8; text-align: center; padding: 3rem var(--gutter); }
     .rentals-owner-cta h2 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--sage-dark); margin-bottom: 0.5rem; }
@@ -52,13 +55,13 @@
       </div>
       <nav class="nav" id="nav">
         <a href="/">Home</a>
-        <a href="/rentals.html" class="active">Our Rentals</a>
-        <a href="/about.html">What We Do</a>
-        <a href="/service-area.html">Service Area</a>
-        <a href="/faqs.html">FAQs</a>
-        <a href="/reviews.html">Reviews</a>
-        <a href="/rental-analysis.html">Free Analysis</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/rentals" class="active">Our Rentals</a>
+        <a href="/about">What We Do</a>
+        <a href="/service-area">Service Area</a>
+        <a href="/faqs">FAQs</a>
+        <a href="/reviews">Reviews</a>
+        <a href="/rental-analysis">Free Analysis</a>
+        <a href="/contact">Contact</a>
       </nav>
       <div class="header-social">
         <a href="https://www.instagram.com/desertsagerentals" target="_blank" rel="noopener" aria-label="Instagram">
@@ -91,7 +94,7 @@
   <section class="rentals-owner-cta">
     <h2>Own a property in Oregon?</h2>
     <p>We manage homes like these end-to-end. See what yours could earn.</p>
-    <a href="/rental-analysis.html" class="cta-btn cta-btn--primary">Get a Free Rental Analysis</a>
+    <a href="/rental-analysis" class="cta-btn cta-btn--primary">Get a Free Rental Analysis</a>
   </section>
 
   <!-- Footer -->
@@ -133,13 +136,16 @@
               (p.location ? '<div class="rental-card__loc">' + esc(p.location) + '</div>' : '') +
               '<h2 class="rental-card__name">' + esc(p.name) + '</h2>' +
               '<p class="rental-card__blurb">' + esc(p.blurb) + '</p>' +
-              '<a class="rental-card__btn" href="' + esc(p.bookUrl) + '" target="_blank" rel="noopener">View &amp; Book &rarr;</a>' +
+              '<div class="rental-card__actions">' +
+                '<a class="rental-card__btn" href="' + esc(p.bookDirectUrl) + '" target="_blank" rel="noopener">Book Direct &amp; Save</a>' +
+                (p.airbnbUrl ? '<a class="rental-card__btn rental-card__btn--alt" href="' + esc(p.airbnbUrl) + '" target="_blank" rel="noopener">Book on Airbnb</a>' : '') +
+              '</div>' +
             '</div>' +
           '</article>'
         ).join('');
       })
       .catch(() => {
-        document.getElementById('rentals-grid').innerHTML = '<div class="rentals-loading">Couldn’t load our homes right now. Please <a href="/contact.html">contact us</a>.</div>';
+        document.getElementById('rentals-grid').innerHTML = '<div class="rentals-loading">Couldn’t load our homes right now. Please <a href="/contact">contact us</a>.</div>';
       });
   </script>
 
