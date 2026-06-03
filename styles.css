@@ -891,4 +891,20 @@ p {
     transform: none;
     transition: none;
   }
+  .marquee__inner {
+    animation: none;
+  }
+}
+
+/* --- Keyboard focus visibility (WCAG 2.4.7) --- */
+.cta-btn:focus-visible,
+.form-submit:focus-visible,
+.faq-question:focus-visible,
+.nav a:focus-visible,
+.hamburger:focus-visible,
+.header-social a:focus-visible,
+.footer__social a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(122, 139, 111, 0.55);
+  border-radius: 4px;
 }
