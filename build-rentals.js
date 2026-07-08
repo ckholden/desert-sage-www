@@ -23,6 +23,7 @@ const esc = s => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').re
 const cards = props.map(p =>
 `      <article class="rental-card">
         <img class="rental-card__img" src="${esc(p.image)}" alt="${esc(p.name)} — ${esc(p.location)}" loading="lazy" width="900" height="600">
+        ${p.petFriendly ? `<span class="rental-card__badge">🐾 Pet Friendly</span>` : ''}
         <div class="rental-card__body">
           ${p.location ? `<div class="rental-card__loc">${esc(p.location)}</div>` : ''}
           <h2 class="rental-card__name">${esc(p.name)}</h2>

@@ -4,6 +4,7 @@
     "name": "Bitterroot Butte",
     "location": "Juniper Canyon · Prineville Reservoir",
     "blurb": "Spacious group getaway sleeping 10 comfortably (up to 12 with couch and/or bringing an air bed). Stunning views of Prineville Reservoir and surrounding mountains.",
+    "petFriendly": true,
     "image": "images/properties/bitterroot-butte.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/1110394862217829892"
@@ -13,6 +14,7 @@
     "name": "The Juniper House",
     "location": "Prineville, Oregon",
     "blurb": "Welcome to The Juniper House, a charming and spacious 4-bedroom, 2.5-bath home, ideal for family get-togethers, leisure, and rest between adventures.",
+    "petFriendly": true,
     "image": "images/properties/the-juniper-house.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/1163914255949873240"
@@ -22,6 +24,7 @@
     "name": "High Desert Retreat",
     "location": "Prineville, Oregon",
     "blurb": "Welcome to High Desert Retreat: Adventure Basecamp Prineville. This single-level 2-bedroom, 1-bath rental sleeps 4. Walk to downtown Prineville's restaurants, coffee, and breweries.",
+    "petFriendly": false,
     "image": "images/properties/high-desert-retreat.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/1366737399767183572"
@@ -31,6 +34,7 @@
     "name": "Arlington Home",
     "location": "Arlington · Columbia River Gorge",
     "blurb": "Welcome to Arlington House, your stylish retreat perched above the peaceful town of Arlington, Oregon and the mighty Columbia River at the far east end of the breathtaking Columbia River Gorge.",
+    "petFriendly": true,
     "image": "images/properties/arlington-home.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/1539976942181572898"
@@ -40,6 +44,7 @@
     "name": "Court St. Cottage",
     "location": "Downtown Prineville",
     "blurb": "Welcome to Court Street Cottage, a one-of-a-kind and cozy home nestled in the heart of Downtown Prineville, Oregon! Walk to shops, restaurants and coffee houses.",
+    "petFriendly": true,
     "image": "images/properties/court-st-cottage.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/834142174065935737"
@@ -49,6 +54,7 @@
     "name": "Lakefront Retreat",
     "location": "Ochoco Lake, Oregon",
     "blurb": "Welcome to Lakefront Retreat on the shores of Ochoco Lake. This peaceful 4BR/2BA lakefront home sleeps 10 and offers direct access for kayaking, fishing, and swimming.",
+    "petFriendly": true,
     "image": "images/properties/lakefront-retreat.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/1611066113769513005"
@@ -58,6 +64,7 @@
     "name": "The Rooftop on Third",
     "location": "Downtown Prineville",
     "blurb": "Two private suites + rooftop deck in downtown Prineville. New Orleans-inspired home with two suites joined by a covered breezeway — ideal for two couples or groups wanting privacy AND shared space.",
+    "petFriendly": false,
     "image": "images/properties/the-rooftop-on-third.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/1616268385762093525"

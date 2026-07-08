@@ -25,9 +25,10 @@
     .rentals-intro p { max-width: 640px; margin: 0.75rem auto 0; color: var(--dark-gray); font-size: 1.05rem; }
     .rentals-section { padding: 3rem var(--gutter) 4rem; background: #FBF9F5; }
     .rentals-grid { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
-    .rental-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 14px rgba(101,117,91,0.10); display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease; }
+    .rental-card { position: relative; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 14px rgba(101,117,91,0.10); display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease; }
     .rental-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(101,117,91,0.18); }
     .rental-card__img { aspect-ratio: 3/2; width: 100%; object-fit: cover; display: block; background: #ece7dd; }
+    .rental-card__badge { position: absolute; top: 0.75rem; left: 0.75rem; z-index: 2; display: inline-flex; align-items: center; gap: 0.3rem; background: var(--sage-dark); color: #fff; font-family: var(--font-body); font-weight: 600; font-size: 0.74rem; letter-spacing: 0.01em; padding: 0.32rem 0.7rem; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,0.22); }
     .rental-card__body { padding: 1.25rem 1.35rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
     .rental-card__loc { font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-bottom: 0.3rem; }
     .rental-card__name { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--dark-gray); line-height: 1.15; margin-bottom: 0.55rem; }
@@ -89,6 +90,7 @@
       <!-- CARDS:START -->
       <article class="rental-card">
         <img class="rental-card__img" src="images/properties/bitterroot-butte.jpg" alt="Bitterroot Butte — Juniper Canyon · Prineville Reservoir" loading="lazy" width="900" height="600">
+        <span class="rental-card__badge">🐾 Pet Friendly</span>
         <div class="rental-card__body">
           <div class="rental-card__loc">Juniper Canyon · Prineville Reservoir</div>
           <h2 class="rental-card__name">Bitterroot Butte</h2>
@@ -101,6 +103,7 @@
       </article>
       <article class="rental-card">
         <img class="rental-card__img" src="images/properties/the-juniper-house.jpg" alt="The Juniper House — Prineville, Oregon" loading="lazy" width="900" height="600">
+        <span class="rental-card__badge">🐾 Pet Friendly</span>
         <div class="rental-card__body">
           <div class="rental-card__loc">Prineville, Oregon</div>
           <h2 class="rental-card__name">The Juniper House</h2>
@@ -113,6 +116,7 @@
       </article>
       <article class="rental-card">
         <img class="rental-card__img" src="images/properties/high-desert-retreat.jpg" alt="High Desert Retreat — Prineville, Oregon" loading="lazy" width="900" height="600">
+        
         <div class="rental-card__body">
           <div class="rental-card__loc">Prineville, Oregon</div>
           <h2 class="rental-card__name">High Desert Retreat</h2>
@@ -125,6 +129,7 @@
       </article>
       <article class="rental-card">
         <img class="rental-card__img" src="images/properties/arlington-home.jpg" alt="Arlington Home — Arlington · Columbia River Gorge" loading="lazy" width="900" height="600">
+        <span class="rental-card__badge">🐾 Pet Friendly</span>
         <div class="rental-card__body">
           <div class="rental-card__loc">Arlington · Columbia River Gorge</div>
           <h2 class="rental-card__name">Arlington Home</h2>
@@ -137,6 +142,7 @@
       </article>
       <article class="rental-card">
         <img class="rental-card__img" src="images/properties/court-st-cottage.jpg" alt="Court St. Cottage — Downtown Prineville" loading="lazy" width="900" height="600">
+        <span class="rental-card__badge">🐾 Pet Friendly</span>
         <div class="rental-card__body">
           <div class="rental-card__loc">Downtown Prineville</div>
           <h2 class="rental-card__name">Court St. Cottage</h2>
@@ -149,6 +155,7 @@
       </article>
       <article class="rental-card">
         <img class="rental-card__img" src="images/properties/lakefront-retreat.jpg" alt="Lakefront Retreat — Ochoco Lake, Oregon" loading="lazy" width="900" height="600">
+        <span class="rental-card__badge">🐾 Pet Friendly</span>
         <div class="rental-card__body">
           <div class="rental-card__loc">Ochoco Lake, Oregon</div>
           <h2 class="rental-card__name">Lakefront Retreat</h2>
@@ -161,6 +168,7 @@
       </article>
       <article class="rental-card">
         <img class="rental-card__img" src="images/properties/the-rooftop-on-third.jpg" alt="The Rooftop on Third — Downtown Prineville" loading="lazy" width="900" height="600">
+        
         <div class="rental-card__body">
           <div class="rental-card__loc">Downtown Prineville</div>
           <h2 class="rental-card__name">The Rooftop on Third</h2>
