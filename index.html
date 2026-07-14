@@ -201,10 +201,12 @@
     </div>
   </div>
 
-  <!-- Trustindex Reviews Widget -->
+  <!-- Guest Reviews (Airbnb + Google, self-hosted — replaces TrustIndex) -->
   <section class="section">
-    <div class="container reviews-widget">
-      <script defer async src='https://cdn.trustindex.io/loader.js?80b094058f3034314226dddb778'></script>
+    <div class="container">
+      <h2 class="home-h2">What Our Guests Say</h2>
+      <p class="home-lead">Real reviews from real stays, pulled straight from Airbnb and Google.</p>
+      <div class="reviews-widget" data-reviews-widget data-reviews-limit="9"></div>
     </div>
   </section>
 
@@ -225,6 +227,7 @@
     </div>
   </footer>
 
+  <script src="reviews-widget.js" defer></script>
   <script>
     // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');

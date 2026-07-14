@@ -565,9 +565,105 @@ p {
 }
 
 /* ===== REVIEWS ===== */
+.reviews-intro {
+  max-width: 680px;
+  margin: 0 auto 2.25rem;
+  text-align: center;
+  color: var(--dark-gray);
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
 .reviews-widget {
   padding: 3rem 0;
   min-height: 300px;
+}
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.review-card {
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(101, 117, 91, 0.10);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.review-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.review-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.review-card__avatar--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sage-light);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.review-card__id {
+  flex: 1;
+  min-width: 0;
+}
+.review-card__name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--dark-gray);
+}
+.review-card__meta {
+  font-size: 0.82rem;
+  color: var(--sage-dark);
+  letter-spacing: 0.02em;
+}
+.review-card__date {
+  color: var(--medium-gray);
+  font-weight: 400;
+}
+.review-card__badge {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  color: var(--white);
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+.review-card__badge--airbnb {
+  background: var(--sage-dark);
+}
+.review-card__badge--google {
+  background: #4285F4;
+}
+.review-card__text {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--dark-gray);
+}
+.reviews-loading,
+.reviews-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--medium-gray);
+  font-family: var(--font-body);
+  padding: 2rem;
 }
 
 /* ===== CONTACT / ANALYSIS FORM ===== */
