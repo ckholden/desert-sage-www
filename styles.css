@@ -564,6 +564,10 @@ p {
   margin: 1.25rem 0 0.5rem;
 }
 
+/* ===== SHARED SECTION HEADINGS (used on index.html + rentals.html) ===== */
+.home-h2 { font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--sage-dark); text-align: center; font-weight: 600; }
+.home-lead { max-width: 680px; margin: 0.6rem auto 2.25rem; text-align: center; color: var(--dark-gray); font-size: 1.08rem; line-height: 1.7; }
+
 /* ===== REVIEWS ===== */
 .reviews-intro {
   max-width: 680px;
@@ -650,6 +654,16 @@ p {
 }
 .review-card__badge--google {
   background: #4285F4;
+}
+.review-card__property {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sage-dark);
+  text-decoration: none;
+}
+.review-card__property:hover {
+  text-decoration: underline;
 }
 .review-card__text {
   font-family: var(--font-body);

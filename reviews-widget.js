@@ -41,6 +41,12 @@
     var badge = r.source === 'google'
       ? '<span class="review-card__badge review-card__badge--google">Google</span>'
       : '<span class="review-card__badge review-card__badge--airbnb">Airbnb</span>';
+    // property_name/source_url are only populated for Airbnb reviews (Google
+    // reviews are business-wide, not tied to one listing) — source_url is
+    // already the exact Airbnb listing URL the guest stayed at.
+    var stayLine = (r.property_name && r.source_url)
+      ? '<a class="review-card__property" href="' + esc(r.source_url) + '" target="_blank" rel="noopener">Stayed at ' + esc(r.property_name) + ' →</a>'
+      : '';
     return '<article class="review-card">' +
       '<div class="review-card__head">' +
         photo +
@@ -50,6 +56,7 @@
         '</div>' +
         badge +
       '</div>' +
+      stayLine +
       '<p class="review-card__text">' + esc(r.review_text) + '</p>' +
     '</article>';
   }
