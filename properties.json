@@ -68,5 +68,15 @@
     "image": "images/properties/the-rooftop-on-third.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/1616268385762093525"
+  },
+  {
+    "id": 827481,
+    "name": "Desert Dream Cottage",
+    "location": "Downtown Prineville",
+    "blurb": "Welcome to Desert Dream Cottage, a lovingly kept 1947 bungalow just a short walk from downtown Prineville. Original hardwood floors, sunny bay windows, air conditioning, and a large, fully fenced backyard make this charming home a cozy base for exploring Central Oregon.",
+    "petFriendly": true,
+    "image": "images/properties/desert-dream-cottage.jpg",
+    "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
+    "airbnbUrl": "https://www.airbnb.com/rooms/1741418652150703396"
   }
 ]
