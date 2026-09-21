@@ -17,8 +17,6 @@ Claude can execute commands, make changes, and deploy without asking. Push to `m
 |------|------|
 | Home | `index.html` |
 | About | `about.html` |
-| Service Area | `service-area.html` |
-| FAQs | `faqs.html` |
 | Reviews | `reviews.html` |
 | Contact | `contact.html` |
 | Rental Analysis | `rental-analysis.html` |
@@ -29,9 +27,9 @@ Claude can execute commands, make changes, and deploy without asking. Push to `m
 - Grayscale palette, minimalist design
 - Contact form via Formspree (`mjgenydq`)
 - Reviews via Trustindex widget embed (`80b094058f3034314226dddb778`)
-- FAQ page has JSON-LD FAQPage structured data for Google rich results
 - Homepage has JSON-LD LocalBusiness schema
 - **Nav must be updated in ALL HTML files when changed**
+- **Service Area and FAQ pages retired Sep 21 2026** (Christian is not seeking new owner clients). `service-area.html` and `faqs.html` are noindex meta-refresh stubs to `/` so stale search results do not 404. Do not re-add them to the nav or sitemap.
 
 ## Related Subdomains
 - `book.desertsagerentals.com` CNAME → Lodgify (booking engine)
