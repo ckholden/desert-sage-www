@@ -29,6 +29,7 @@ Claude can execute commands, make changes, and deploy without asking. Push to `m
 - Reviews via Trustindex widget embed (`80b094058f3034314226dddb778`)
 - Homepage has JSON-LD LocalBusiness schema
 - **Nav must be updated in ALL HTML files when changed**
+- **Unlisted availability page `/availability/` (Sep 30 2026)** — for contractors and friends; share `https://desertsagerentals.com/availability/?p=<lodgify id>` for one house. Data is live from `https://tasks.desertsagerentals.com/api/public/availability` (see desert-sage-tasks CLAUDE.md). Keep it OUT of the nav, sitemap and robots.txt (a robots.txt Disallow would publish the path); it carries `noindex`. New houses appear on their own; `properties.json` only adds nicer names/photos for ids it knows. Local preview reads `availability/_dev-sample.json` (gitignored) because prod CORS only allows desertsagerentals.com. No placeholder attributes (site rule).
 - **Service Area and FAQ pages retired Sep 21 2026** (Christian is not seeking new owner clients). `service-area.html` and `faqs.html` are noindex meta-refresh stubs to `/` so stale search results do not 404. Do not re-add them to the nav or sitemap.
 
 ## Related Subdomains

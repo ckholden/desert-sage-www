@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Unlisted page (Sep 30 2026): not in the nav, the sitemap, or robots.txt.
+       Adding it to robots.txt would PUBLISH the path and stop crawlers from ever
+       seeing this noindex, so leave robots.txt alone. The data it shows is only
+       open/booked nights, the same as the public Airbnb calendars. -->
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https://tasks.desertsagerentals.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Availability | Desert Sage Rentals</title>
+  <meta property="og:title" content="Desert Sage Rentals availability">
+  <meta property="og:description" content="Open and booked nights for Desert Sage homes.">
+  <meta property="og:image" content="https://desertsagerentals.com/images/logo.png">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    :root {
+      --booked: #65755B;          /* --sage-dark */
+      --open: #ffffff;
+      --line: #e3ddd2;
+      --ink: #2b2f27;
+      --muted: #6f7468;
+      --past: #efebe3;
+    }
+    body.av { background: var(--off-white); color: var(--ink); min-height: 100vh; display: flex; flex-direction: column; }
+    body.av .av-top p, body.av .av-foot p { margin-bottom: 0; }
+    .av-wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    .av-top { background: #fff; border-bottom: 1px solid var(--line); }
+    .av-top .av-wrap { display: flex; align-items: center; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+    .av-top img { width: 52px; height: 52px; object-fit: contain; display: block; }
+    .av-top h1 { font-family: var(--font-heading); font-weight: 600; font-size: 1.9rem; line-height: 1.1; color: var(--ink); }
+    .av-updated { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+    .av-updated.is-stale { color: #9a5b1c; }
+
+    .av-main { padding-top: 22px; padding-bottom: 40px; flex: 1 0 auto; width: 100%; }
+
+    .av-controls { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 14px; }
+    .av-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 260px; max-width: 420px; }
+    .av-field label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+    .av-field select {
+      font: inherit; font-size: 1rem; color: var(--ink); background: #fff;
+      border: 1px solid #cfc8bb; border-radius: 10px; padding: 10px 12px; min-height: 44px; width: 100%;
+    }
+    .av-btn {
+      font: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+      background: var(--sage-dark); color: #fff; border: 0; border-radius: 10px; padding: 11px 16px; min-height: 44px;
+    }
+    .av-btn:hover { background: #56654d; }
+    .av-btn:focus-visible, .av-field select:focus-visible, .av-link:focus-visible, .av-name-btn:focus-visible { outline: 3px solid #b9c7ad; outline-offset: 2px; }
+    .av-btn:disabled, .av-field select:disabled { opacity: 0.5; cursor: not-allowed; }
+    .av-btn--ghost { background: #fff; color: var(--sage-dark); border: 1px solid #cfc8bb; }
+    .av-btn--ghost:hover { background: #f4f1ea; }
+
+    .av-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 18px 0 6px; font-size: 0.88rem; color: var(--muted); }
+    .av-legend span { display: inline-flex; align-items: center; gap: 7px; }
+    body.av .av-note { font-size: 0.82rem; color: var(--muted); margin: 0 0 16px; }
+    body.av .av-hint { font-size: 0.85rem; color: var(--muted); margin: 0 0 8px; }
+
+    /* One day = two halves. Top-left = the night before (morning), bottom-right = that night. */
+    .sw, .d { border: 1px solid var(--line); background: var(--open); }
+    .sw { width: 16px; height: 16px; border-radius: 4px; display: inline-block; }
+    .d-b  { background: var(--booked); border-color: var(--booked); }
+    .d-co { background: linear-gradient(135deg, var(--booked) 50%, var(--open) 50%); }
+    .d-ci { background: linear-gradient(135deg, var(--open) 50%, var(--booked) 50%); }
+    .d-past { background: var(--past); border-color: var(--past); }
+    .d-na { background: repeating-linear-gradient(45deg, #f3f0ea 0 4px, #ebe6dc 4px 8px); border-color: #ebe6dc; }
+
+    .av-status { padding: 26px 0; color: var(--muted); }
+    .av-status.is-error { color: #8a3b24; }
+    .av-status .av-btn { margin-top: 12px; }
+    .av-toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 10px; font-size: 0.92rem; box-shadow: 0 6px 24px rgba(0,0,0,.18); z-index: 10; opacity: 0; pointer-events: none; transition: opacity .2s; max-width: calc(100vw - 32px); }
+    .av-toast.is-on { opacity: 1; }
+    .av-share { position: fixed; left: 16px; right: 16px; bottom: 16px; max-width: 520px; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,.2); padding: 14px; z-index: 11; }
+    .av-share label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .av-share-row { display: flex; gap: 8px; }
+    .av-share input { flex: 1; min-width: 0; font: inherit; font-size: 16px; padding: 10px 12px; border: 1px solid #cfc8bb; border-radius: 10px; color: var(--ink); }
+
+    /* ---- All homes: rows = homes, columns = days ---- */
+    .av-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+    table.av-grid { border-collapse: separate; border-spacing: 0; font-size: 0.78rem; }
+    .av-grid th, .av-grid td { padding: 0; }
+    .av-grid thead th { background: #fff; font-weight: 600; color: var(--muted); text-align: center; }
+    .av-grid .m th { text-align: left; font-family: var(--font-heading); font-size: 1.05rem; color: var(--ink); padding: 8px 6px 2px; white-space: nowrap; border-left: 1px solid var(--line); }
+    .av-grid .m th:first-child { border-left: 0; }
+    .av-grid .dn th { width: 30px; min-width: 30px; padding: 2px 0 6px; line-height: 1.15; }
+    .av-grid .dn th small { display: block; font-weight: 500; font-size: 0.66rem; }
+    .av-grid .dn th.is-today { color: var(--sage-dark); }
+    .av-grid .dn th.is-first small, .av-grid .dn th.is-today small { font-weight: 700; color: var(--ink); }
+    .av-scroll:focus-visible { outline: 3px solid #b9c7ad; outline-offset: 2px; }
+    .av-grid .corner, .av-grid tbody th {
+      position: sticky; left: 0; z-index: 2; background: #fff; text-align: left;
+      min-width: 150px; max-width: 150px; border-right: 1px solid var(--line);
+    }
+    .av-grid tbody th { padding: 6px 10px; vertical-align: middle; border-top: 1px solid var(--line); }
+    .av-grid tbody td { border-top: 1px solid var(--line); padding: 5px 2px; }
+    .av-grid tbody .d { width: 26px; height: 26px; border-radius: 5px; margin: 0 auto; }
+    .av-name-btn { display: block; width: 100%; min-height: 28px; text-align: left; background: none; border: 0; padding: 4px 0; font: inherit; font-weight: 600; font-size: 0.86rem; color: var(--ink); cursor: pointer; line-height: 1.25; }
+    .av-chev { color: var(--sage-dark); }
+    .av-name-btn:hover { color: var(--sage-dark); text-decoration: underline; }
+    .av-link { display: inline-block; min-height: 28px; margin-top: 4px; background: none; border: 0; padding: 4px 0; font: inherit; font-size: 0.8rem; color: var(--sage-dark); cursor: pointer; text-decoration: underline; }
+    .av-more { margin-top: 12px; }
+
+    /* ---- One home: month calendars ---- */
+    .av-home-head { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 8px 0 16px; }
+    .av-home-head img { width: 132px; height: 90px; object-fit: cover; border-radius: 10px; display: block; background: #e7e2d8; }
+    .av-home-head h2 { font-family: var(--font-heading); font-weight: 600; font-size: 1.8rem; line-height: 1.1; }
+    .av-open-box { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; }
+    .av-open-box h3 { font-family: var(--font-heading); font-weight: 600; font-size: 1.2rem; margin-bottom: 6px; }
+    body.av .av-open { list-style: disc; padding-left: 20px; margin: 0; columns: 2 220px; column-gap: 24px; font-size: 0.92rem; }
+    body.av .av-open li { margin: 0 0 4px; break-inside: avoid; }
+    body.av .av-small { font-size: 0.85rem; color: var(--muted); margin: 6px 0 0; }
+    .av-months { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
+    .av-month { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 12px 14px; }
+    .av-month h3 { font-family: var(--font-heading); font-weight: 600; font-size: 1.25rem; margin-bottom: 6px; }
+    .av-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+    .av-cal .wd { text-align: center; font-size: 0.7rem; font-weight: 600; color: var(--muted); padding-bottom: 2px; }
+    .av-cal .d { aspect-ratio: 1 / 1; min-height: 34px; border-radius: 6px; position: relative; font-size: 0.78rem; }
+    .av-month h3:focus { outline: none; }
+    .av-home-head h2:focus { outline: none; }
+    .av-cal .d span { position: absolute; top: 3px; left: 5px; font-weight: 600; color: var(--ink); line-height: 1; }
+    .av-cal .d-b span, .av-cal .d-co span { color: #fff; }
+    .av-cal .d-past span, .av-cal .d-na span { color: #aaa497; font-weight: 500; }
+    .av-cal .d.is-today { box-shadow: 0 0 0 2px var(--ink); }
+    .av-cal .blank { visibility: hidden; }
+
+    .av-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .av-foot { border-top: 1px solid var(--line); background: #fff; padding: 18px 0 26px; font-size: 0.9rem; color: var(--muted); }
+    .av-foot a { color: var(--sage-dark); text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .av-top h1 { font-size: 1.6rem; }
+      .av-grid .corner, .av-grid tbody th { min-width: 118px; max-width: 118px; }
+      .av-name-btn { font-size: 0.8rem; }
+      .av-home-head img { width: 104px; height: 72px; }
+      .av-home-head h2 { font-size: 1.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body class="av">
+  <header class="av-top">
+    <div class="av-wrap">
+      <a href="/" aria-label="Desert Sage Rentals home"><img src="/images/logo.png" alt="Desert Sage Rentals"></a>
+      <div>
+        <h1>Availability</h1>
+        <p class="av-updated" id="av-updated" aria-live="polite"></p>
+      </div>
+    </div>
+  </header>
+
+  <main class="av-main av-wrap">
+    <div class="av-controls">
+      <div class="av-field">
+        <label for="av-home">Home</label>
+        <select id="av-home" disabled>
+          <option value="">All homes</option>
+        </select>
+      </div>
+      <button type="button" class="av-btn" id="av-copy" disabled>Share link</button>
+    </div>
+
+    <div class="av-legend" aria-hidden="true">
+      <span><i class="sw"></i>Open</span>
+      <span><i class="sw d-b"></i>Booked or blocked</span>
+      <span><i class="sw d-co"></i>Guests leave that morning</span>
+      <span><i class="sw d-ci"></i>Guests arrive that afternoon</span>
+    </div>
+    <p class="av-note">Open means nothing is booked or blocked for that night. Dates are Pacific time and update about every 15 minutes.</p>
+
+    <div class="av-status" id="av-status" role="status">Loading availability…</div>
+    <section id="av-all" hidden aria-label="All homes"></section>
+    <section id="av-one" hidden></section>
+  </main>
+
+  <footer class="av-foot">
+    <div class="av-wrap">
+      Questions? Call or text <a href="tel:+15413621879">541-362-1879</a> &nbsp;&middot;&nbsp; <a href="/">desertsagerentals.com</a>
+    </div>
+  </footer>
+
+  <div class="av-toast" id="av-toast" role="status" aria-live="polite"></div>
+  <div class="av-share" id="av-share" hidden>
+    <label for="av-share-input">Copy this link</label>
+    <div class="av-share-row">
+      <input id="av-share-input" type="url" readonly>
+      <button type="button" class="av-btn av-btn--ghost" id="av-share-close">Close</button>
+    </div>
+  </div>
+  <script src="/availability/availability.js" defer></script>
+</body>
+</html>

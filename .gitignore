@@ -2,3 +2,5 @@
 node_modules/
 *.tmp
 _lodgify-raw.json
+# local preview fixture for /availability/ (never deploy)
+availability/_dev-sample.json
