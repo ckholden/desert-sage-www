@@ -1,5 +1,15 @@
 [
   {
+    "id": 853147,
+    "name": "The Parkside Craftsman",
+    "location": "Prineville, Oregon",
+    "blurb": "Near downtown Prineville, this cozy 3-bedroom, 2.5-bath craftsman has a private hot tub, two living rooms, foosball and a fenced yard for your pup. Walk to trails, breweries, restaurants and parks, with Prineville Reservoir and Smith Rock a short drive away.",
+    "petFriendly": true,
+    "image": "images/properties/the-parkside-craftsman.jpg",
+    "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
+    "airbnbUrl": "https://www.airbnb.com/rooms/1787809426455297916"
+  },
+  {
     "id": 745455,
     "name": "Bitterroot Butte",
     "location": "Juniper Canyon · Prineville Reservoir",
@@ -78,15 +88,5 @@
     "image": "images/properties/desert-dream-cottage.jpg",
     "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
     "airbnbUrl": "https://www.airbnb.com/rooms/1741418652150703396"
-  },
-  {
-    "id": 853147,
-    "name": "The Parkside Craftsman",
-    "location": "Prineville, Oregon",
-    "blurb": "Near downtown Prineville, this cozy 3-bedroom, 2.5-bath craftsman has a private hot tub, two living rooms, foosball and a fenced yard for your pup. Walk to trails, breweries, restaurants and parks, with Prineville Reservoir and Smith Rock a short drive away.",
-    "petFriendly": true,
-    "image": "images/properties/the-parkside-craftsman.jpg",
-    "bookDirectUrl": "https://book.desertsagerentals.com/en/all-properties",
-    "airbnbUrl": "https://www.airbnb.com/rooms/1787809426455297916"
   }
 ]
