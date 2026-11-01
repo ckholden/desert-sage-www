@@ -10,7 +10,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
   <title>Plan Your Trip | Desert Sage Rentals</title>
-  <meta name="description" content="Weather links for your Central Oregon trip, from our local weather partner, Central Oregon Weather (CORWX).">
+  <meta name="description" content="Weather links for your Central Oregon trip, with forecasts by Central Oregon Weather (CORWX).">
   <meta property="og:title" content="Plan Your Trip to Central Oregon">
   <meta property="og:description" content="Forecasts for Prineville, the mountain passes, the night sky and Smith Rock, from Central Oregon Weather (CORWX).">
   <meta property="og:image" content="https://desertsagerentals.com/images/logo.png">
@@ -43,12 +43,15 @@
     }
     .trip-lead { max-width: 680px; margin: 0.7rem auto 1.25rem; text-align: center; font-size: 1.08rem; line-height: 1.7; color: var(--trip-ink); text-wrap: pretty; }
 
-    /* Partner credit, near the top so guests see whose forecasts these are. */
-    .trip-partner { max-width: 680px; margin: 0 auto 2.5rem; text-align: center; display: flex; flex-direction: column; gap: 4px; }
-    .trip-partner-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--trip-muted); }
-    .trip-partner-credit { font-size: 1.05rem; line-height: 1.6; color: var(--trip-ink); text-wrap: balance; }
-    .trip-partner-credit a { color: var(--sage-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
-    .trip-partner-credit a:hover { color: #4F5D47; }
+    /* CORWX credit, near the top so guests see whose forecasts these are.
+       The logo is his file from corwx.com, unaltered; only its display size is set. */
+    .trip-credit { max-width: 680px; margin: 0 auto 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .trip-credit-logo { display: block; line-height: 0; border-radius: 8px; }
+    .trip-credit-logo img { display: block; width: 200px; height: auto; }
+    @media (max-width: 480px) { .trip-credit-logo img { width: 170px; } }
+    .trip-credit-line { margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--trip-ink); text-wrap: balance; }
+    .trip-credit-line a { color: var(--sage-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+    .trip-credit-line a:hover { color: #4F5D47; }
 
     /* Four cards: 4 across, 2 by 2, or a single column. Never 3 + 1. */
     .trip-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
@@ -91,10 +94,10 @@
     <div class="trip-wrap">
       <h1>Plan Your Trip to Central Oregon</h1>
       <p class="trip-lead">High desert weather can change fast, especially in the mountains. Check the latest forecast before you head out.</p>
-      <p class="trip-partner">
-        <span class="trip-partner-label">Our local weather partner</span>
-        <span class="trip-partner-credit">Forecasts by meteorologist <strong>Dorrell Wenninger</strong> at <a href="https://corwx.com/" target="_blank" rel="noopener">Central Oregon Weather (CORWX)</a></span>
-      </p>
+      <div class="trip-credit">
+        <a class="trip-credit-logo" href="https://corwx.com/" target="_blank" rel="noopener"><img src="/images/corwx-logo.png" width="1024" height="768" alt="Central Oregon Weather (CORWX)"></a>
+        <p class="trip-credit-line">Forecasts by meteorologist <strong>Dorrell Wenninger</strong> at <a href="https://corwx.com/" target="_blank" rel="noopener">Central Oregon Weather (CORWX)</a></p>
+      </div>
 
       <div class="trip-grid">
         <a class="trip-card" href="https://corwx.com/my-community/crook-county/" target="_blank" rel="noopener">
